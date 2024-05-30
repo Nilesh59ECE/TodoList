@@ -14,7 +14,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/register', { name, email, phone, birthday, address, password }, {
+      const response = await axios.post('https://todo-list-backend-ivory.vercel.app/api/register', { name, email, phone, birthday, address, password }, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -34,7 +34,7 @@ export default function Register() {
   };
 
   const handleGoogleRegister = () => {
-    window.location.href = 'http://localhost:5000/api/google';
+    window.location.href = 'https://todo-list-backend-ivory.vercel.app/api/google';
   };
   
 

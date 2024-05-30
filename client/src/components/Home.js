@@ -18,7 +18,7 @@ const Home = () => {
   const fetchTasks = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/tasks', {
+      const response = await axios.get('https://todo-list-backend-ivory.vercel.app/api/tasks', {
         headers: { Authorization: token }
       });
       setTasks(response.data.tasks);
@@ -30,7 +30,7 @@ const Home = () => {
   const addTask = async () => {
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/tasks', { task: newTask }, {
+      await axios.post('https://todo-list-backend-ivory.vercel.app/api/tasks', { task: newTask }, {
         headers: { Authorization: token }
       });
       setNewTask('');
@@ -43,7 +43,7 @@ const Home = () => {
   const updateTask = async (index) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/tasks/${tasks[index]._id}`, { task: editedTask }, {
+      await axios.put(`https://todo-list-backend-ivory.vercel.app/api/tasks/${tasks[index]._id}`, { task: editedTask }, {
         headers: { Authorization: token }
       });
       setEditingIndex(-1);
@@ -56,7 +56,7 @@ const Home = () => {
   const deleteTask = async (index) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/tasks/${tasks[index]._id}`, {
+      await axios.delete(`https://todo-list-backend-ivory.vercel.app/api/tasks/${tasks[index]._id}`, {
         headers: { Authorization: token }
       });
       fetchTasks();

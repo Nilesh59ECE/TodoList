@@ -10,7 +10,7 @@ export default function Login(){
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await axios.post('http://localhost:5000/api/login', { email, password }, {
+          const response = await axios.post('https://todo-list-backend-ivory.vercel.app/api/login', { email, password }, {
             headers: {
               'Content-Type': 'application/json'
             }
@@ -35,7 +35,7 @@ export default function Login(){
         try {
             // Perform Google authentication
             // Redirect user to Google authentication endpoint
-            window.location.href = 'http://localhost:5000/api/google';
+            window.location.href = 'https://todo-list-backend-ivory.vercel.app/api/google';
             console.log('Google registration successful:', window.location.href);
           } catch (error) {
             console.error('Google authentication failed:', error);
